@@ -35,8 +35,8 @@ android {
         applicationId = "com.scrollnumb.app"
         minSdk = 26
         targetSdk = 36
-versionCode = 43
-        versionName = "1.2.21"
+        versionCode = 44
+        versionName = "1.2.22"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

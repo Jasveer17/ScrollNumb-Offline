@@ -329,7 +329,7 @@ class ScrollAccessibilityService : AccessibilityService(), ViewModelStoreOwner {
             // carry into the new day and cap re-lock doesn't use stale data.
             seenVideosMutex.withLock { seenVideosList.clear() }
             recentVideoMemory.clear()
-            isAwarenessPromptVisibleFlow.value = false
+            setAwarenessPopupVisible(false)
             lastAwarenessPromptTimeMs = 0L
             lastAwarenessPromptCount = 0
             pendingSignature = ""
@@ -2762,7 +2762,7 @@ val reelSurfaceState = detectCurrentReelSurface(rootNode, currentPlatform)
             mainHandler.post { setAwarenessPopupVisible(visible) }
             return
         }
-        isAwarenessPromptVisibleFlow.value = visible
+        if (isAwarenessPromptVisibleFlow.value == visible) return
         val params = floatingParams ?: return
         val view = floatingComposeView ?: return
         try {
@@ -2776,6 +2776,7 @@ val reelSurfaceState = detectCurrentReelSurface(rootNode, currentPlatform)
                 params.y = savedPillY
             }
             windowManager.updateViewLayout(view, params)
+            isAwarenessPromptVisibleFlow.value = visible
         } catch (e: Exception) {
             Log.e(TAG, "Failed to update layout for awareness popup: ${e.message}")
         }
