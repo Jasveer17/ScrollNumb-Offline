@@ -288,16 +288,6 @@ private fun LoggedInActions(
 }
 
 @Composable
-private fun LoggedOutActions(onLogin: () -> Unit) {
-    NumbnessPill(
-        label = stringResource(R.string.profile_login),
-        onClick = onLogin,
-        inverse = true,
-        modifier = Modifier.fillMaxWidth()
-    )
-}
-
-@Composable
 private fun XpCard(
     totalXp: Int,
     weeklyXp: Int,

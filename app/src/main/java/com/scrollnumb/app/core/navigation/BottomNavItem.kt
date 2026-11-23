@@ -10,7 +10,6 @@ sealed class BottomNavItem(
     @DrawableRes val iconRes: Int
 ) {
     data object Home : BottomNavItem(Screen.Dashboard.route, R.string.nav_home, R.drawable.br_ic_home)
-    data object Leaderboard : BottomNavItem(Screen.Leaderboard.route, R.string.nav_leaderboard, R.drawable.br_ic_battle)
     data object Stats : BottomNavItem(Screen.Analytics.route, R.string.nav_stats, R.drawable.br_ic_chart)
     data object Profile : BottomNavItem(Screen.Profile.route, R.string.nav_profile, R.drawable.br_ic_user)
 }

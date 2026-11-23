@@ -116,7 +116,7 @@ fun AccessibilityDisclosureDialog(
             Spacer(Modifier.height(10.dp))
             PrivacyRow(
                 icon = Icons.Rounded.PhoneAndroid,
-                text = "Content processing stays on-device; only tracking health and permission status sync for fair leagues"
+                text = "Scroll detection and progress tracking run on this device."
             )
 
             Spacer(Modifier.height(18.dp))

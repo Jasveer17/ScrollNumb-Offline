@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         // Route target from either a notification extra or a deep link
-        // (scrollnumb://<route>, e.g. scrollnumb://leaderboard).
+        // (scrollnumb://<route>, e.g. scrollnumb://stats).
         pendingRoute = routeFromIntent(intent)
 
         setContent {
@@ -99,9 +99,6 @@ class MainActivity : AppCompatActivity() {
             var initialStartDest by remember { mutableStateOf<String?>(null) }
             LaunchedEffect(Unit) {
                 applyStoredLocale()
-                // Everyone competes — the opt-in toggle was removed, so ensure any
-                // previously opted-out user is shown on the leaderboard again.
-                userPreferences.setLeaderboardOptIn(true)
                 val completed = userPreferences.onboardingCompleted.first()
                 initialStartDest = if (completed) Screen.Dashboard.route else Screen.Onboarding.route
             }
@@ -110,7 +107,7 @@ class MainActivity : AppCompatActivity() {
                 val startDest = initialStartDest
                 if (startDest != null) {
                     val navController = rememberNavController()
-                    val mainPagerState = rememberPagerState(pageCount = { 4 })
+                    val mainPagerState = rememberPagerState(pageCount = { 3 })
                     androidx.compose.foundation.layout.Box(
                         modifier = Modifier
                             .fillMaxSize()
@@ -155,16 +152,12 @@ class MainActivity : AppCompatActivity() {
                                 when (pendingRoute) {
                                     null -> return@LaunchedEffect
                                     "relaxation" -> navController.navigate(Screen.Relaxation.route)
-                                    "leaderboard" -> {
+                                    "analytics", "stats", "leaderboard" -> {
                                         mainPagerState.requestScrollToPage(1)
                                         navController.navigate(Screen.Dashboard.route) { launchSingleTop = true }
                                     }
-                                    "analytics", "stats" -> {
-                                        mainPagerState.requestScrollToPage(2)
-                                        navController.navigate(Screen.Dashboard.route) { launchSingleTop = true }
-                                    }
                                     "profile" -> {
-                                        mainPagerState.requestScrollToPage(3)
+                                        mainPagerState.requestScrollToPage(2)
                                         navController.navigate(Screen.Dashboard.route) { launchSingleTop = true }
                                     }
                                     "xp", "xp_detail" -> navController.navigate(Screen.XpDetail.route)

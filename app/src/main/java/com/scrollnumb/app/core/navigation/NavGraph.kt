@@ -24,7 +24,6 @@ import com.scrollnumb.app.core.datastore.UserPreferences
 import com.scrollnumb.app.feature.analytics.AnalyticsScreen
 import com.scrollnumb.app.feature.dashboard.DashboardScreen
 import com.scrollnumb.app.feature.dashboard.ShieldScreen
-import com.scrollnumb.app.feature.leaderboard.LeaderboardScreen
 import com.scrollnumb.app.feature.onboarding.OnboardingScreen
 import com.scrollnumb.app.feature.profile.EditProfileScreen
 import com.scrollnumb.app.feature.profile.ProfileScreen
@@ -47,50 +46,6 @@ private const val NAV_DURATION = 320
 // pager straight on this permissions page instead of replaying the whole
 // "continue ×5" walkthrough. Keep in sync with OnboardingScreen's page constants.
 private const val ONBOARDING_PERMISSIONS_PAGE = 6
-
-/**
- * Post-authentication routing. Permissions (accessibility/overlay/usage) are
- * only requested inside the onboarding flow, so a user who reaches the app by
- * ANY auth exit — direct login, sign-up, or skip — must still pass through
- * onboarding when this device hasn't completed it. Only a device that already
- * finished onboarding goes straight to the dashboard. Prevents the "logged in
- * but nothing counts" state where the service was never enabled.
- *
- * [jumpToPermissions] is set only for a direct sign-in of a RETURNING user: they
- * skip the intro slides and land on the permissions page (the one device-local
- * step they still need). Sign-up and Get Started keep the full tour.
- */
-private fun navigateAfterAuth(
-    navController: NavHostController,
-    userPreferences: UserPreferences,
-    scope: CoroutineScope,
-    context: android.content.Context,
-    popRoute: String,
-    jumpToPermissions: Boolean = false
-) {
-    scope.launch {
-        val onboarded = userPreferences.onboardingCompleted.first()
-        val dest = if (onboarded) Screen.Dashboard.route else Screen.Onboarding.route
-        // Seed the pager's resume bookmark so a signed-in returning user opens
-        // directly on the permissions page rather than the first intro slide.
-        if (!onboarded && jumpToPermissions) {
-            context.getSharedPreferences("scroll_numb_prefs", android.content.Context.MODE_PRIVATE)
-                .edit().putInt("ONBOARD_PAGE", ONBOARDING_PERMISSIONS_PAGE).apply()
-        }
-        navController.navigate(dest) {
-            // When not onboarded, MainActivity's NavHost already has a stale
-            // Onboarding at the graph root (its pager initialised on page 0
-            // before login seeded the resume page). Popping UP TO and INCLUDING
-            // Onboarding clears that reused instance so navigate() builds a fresh
-            // one that reads ONBOARD_PAGE — otherwise launchSingleTop reuses the
-            // page-0 pager and a returning login replays the whole tour instead
-            // of landing on the permissions summary. Sign-up / Get Started have
-            // ONBOARD_PAGE=0, so their fresh instance still opens on page 0.
-            popUpTo(if (onboarded) popRoute else Screen.Onboarding.route) { inclusive = true }
-            launchSingleTop = true
-        }
-    }
-}
 
 private val bottomNavRoutes = setOf(
     Screen.Dashboard.route
@@ -196,14 +151,6 @@ fun ScrollNumbNavGraph(
             BackHandler(enabled = mainPagerState.currentPage != 0) {
                 scope.launch { mainPagerState.animateScrollToPage(0) }
             }
-            LaunchedEffect(mainPagerState.settledPage) {
-                val route = when (mainPagerState.settledPage) {
-                    1 -> Screen.Leaderboard.route
-                    2 -> Screen.Analytics.route
-                    3 -> Screen.Profile.route
-                    else -> Screen.Dashboard.route
-                }
-            }
             HorizontalPager(
                 state = mainPagerState,
                 modifier = Modifier.fillMaxSize(),
@@ -216,14 +163,10 @@ fun ScrollNumbNavGraph(
                         onNavigateToSettings = { navController.navigate(Screen.Settings.route) },
                         onNavigateToShield = { navController.navigate(Screen.Shield.route) },
                         onNavigateToStats = {
-                            scope.launch { mainPagerState.animateScrollToPage(2) }
+                            scope.launch { mainPagerState.animateScrollToPage(1) }
                         }
                     )
-                    1 -> LeaderboardScreen(
-                        userPreferences = userPreferences,
-                        onXpClick = { navController.navigate(Screen.XpDetail.route) }
-                    )
-                    2 -> AnalyticsScreen()
+                    1 -> AnalyticsScreen()
                     else -> ProfileScreen(
                         onNavigateToSettings = { navController.navigate(Screen.Settings.route) },
                         onNavigateToEditProfile = { navController.navigate(Screen.EditProfile.route) },

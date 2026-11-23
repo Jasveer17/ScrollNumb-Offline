@@ -120,7 +120,7 @@ fun EditProfileScreen(
                 )
                 TextButton(onClick = doSave, enabled = !uiState.isSaving) {
                     Text(
-                        text = if (uiState.isSaving) stringResource(R.string.login_signing_in)
+                        text = if (uiState.isSaving) stringResource(R.string.profile_saving)
                             else stringResource(R.string.edit_profile_save_short),
                         color = ScrollNumbColors.Saffron,
                         fontWeight = FontWeight.Bold,
@@ -292,7 +292,7 @@ fun EditProfileScreen(
                     Spacer(modifier = Modifier.height(32.dp))
 
                     NumbnessPill(
-                        label = if (uiState.isSaving) stringResource(R.string.login_signing_in)
+                        label = if (uiState.isSaving) stringResource(R.string.profile_saving)
                             else stringResource(R.string.edit_profile_save),
                         onClick = doSave,
                         enabled = !uiState.isSaving,

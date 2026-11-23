@@ -86,7 +86,6 @@ fun BottomNavBar(
 ) {
     val items = listOf(
         BottomNavItem.Home,
-        BottomNavItem.Leaderboard,
         BottomNavItem.Stats,
         BottomNavItem.Profile
     )

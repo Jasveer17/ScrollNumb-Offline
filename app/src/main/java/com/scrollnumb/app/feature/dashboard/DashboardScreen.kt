@@ -658,7 +658,7 @@ private fun androidx.compose.foundation.layout.BoxScope.AppTourOverlay(
             TourStep("📊", "AT A GLANCE", "Your two progress rings", "The left ring shows today's scroll budget. The right tracks decompression; tap it whenever you want a guided recovery activity.", targetKey = "rings"),
             TourStep("🔥", "CONTROL", "Streak, lock, and settings", "The flame tracks under-limit days. The lock blocks reels instantly. The gear contains limits, themes, haptics, permissions, and widgets.", targetKey = "topbar"),
             TourStep("💊", "IN REEL APPS", "The pill and shield", "In Instagram, Shorts, and Snapchat, the floating pill counts live. At your cap, the shield pauses reels until your cooldown ends."),
-            TourStep("🏆", "EXPLORE", "Everything else is below", "Leaderboard is for competition, Stats shows your trends, and Profile holds your streak, XP, league, and personal details.")
+            TourStep("🏆", "EXPLORE", "Everything else is below", "Stats shows your scrolling trends. Open Profile for your streak, XP, and personal details.")
         )
     }
 
