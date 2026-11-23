@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Square (2x2) preview so home-screen launchers default the widget to a
+     square placement instead of the old 2:1 (270x110) wide thumbnail. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <size android:width="220dp" android:height="220dp" />
+            <corners android:radius="24dp" />
+            <solid android:color="#181410" />
+        </shape>
+    </item>
+    <!-- Top status label -->
+    <item android:left="74dp" android:top="24dp" android:right="74dp" android:bottom="180dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="4dp" />
+            <solid android:color="#FFD642" />
+        </shape>
+    </item>
+    <!-- Avatar ring -->
+    <item android:width="66dp" android:height="66dp"
+        android:gravity="start|center_vertical" android:left="22dp">
+        <shape android:shape="oval">
+            <solid android:color="#FFD642" />
+        </shape>
+    </item>
+    <!-- Avatar image -->
+    <item android:width="58dp" android:height="58dp"
+        android:gravity="start|center_vertical" android:left="26dp">
+        <bitmap
+            android:gravity="fill"
+            android:src="@mipmap/scrollnumbdark" />
+    </item>
+    <!-- Count numeral -->
+    <item android:left="104dp" android:top="96dp" android:right="70dp" android:bottom="96dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="6dp" />
+            <solid android:color="#F5F0E8" />
+        </shape>
+    </item>
+    <!-- "of 50" sub-label -->
+    <item android:left="104dp" android:top="130dp" android:right="96dp" android:bottom="78dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="3dp" />
+            <solid android:color="#B3F5F0E8" />
+        </shape>
+    </item>
+    <!-- Progress bar -->
+    <item android:left="16dp" android:top="196dp" android:right="16dp" android:bottom="16dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="3dp" />
+            <solid android:color="#FFD642" />
+        </shape>
+    </item>
+</layer-list>

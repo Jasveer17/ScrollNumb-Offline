@@ -1,0 +1,35 @@
+# Android / Gradle
+*.iml
+.gradle/
+build/
+app/build/
+local.properties
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.keystore
+*.jks
+keystore.properties
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Local device-debug scratch (accessibility-tree dumps + screenshots of real
+# feeds — may contain personal content; keep them out of the repo). Root-anchored
+# so real drawables under app/src/main/res are unaffected.
+/*.log
+/fb*.png
+/fb*.xml
+/ig_*.png
+/ig_*.xml
+/yt_*.png
+/yt_*.xml
+/ui*.xml
+/snp.xml
+/ytdump.xml
+/s[0-9].png
+/screen.png

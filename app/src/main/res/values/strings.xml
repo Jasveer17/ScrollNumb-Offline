@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_loading">Loading�</string>
+    <string name="app_name">ScrollNumb</string>
+    <string name="app_tagline">Stop scrolling. Start feeling your thumbs.</string>
+    <string name="legal_date_value">22 November 2026</string>
+
+    <!-- Dashboard -->
+    <string name="dash_you_scrolled">You\'ve scrolled</string>
+    <string name="dash_daily_cap">of %1$d daily cap</string>
+    <string name="dash_undo_last_count">↩ Undo last count (%1$d left)</string>
+    <string name="dash_touch_grass">Touch Some Grass</string>
+    <string name="dash_top_apps">Top apps</string>
+    <string name="dash_today">Today</string>
+    <string name="dash_time_on_doomscroll">Time on doomscroll</string>
+    <string name="dash_streak">Streak</string>
+    <string name="dash_block_status">Block status</string>
+    <string name="dash_block_on">ON</string>
+    <string name="dash_block_off">OFF</string>
+    <string name="dash_footer">Stop scrolling. Start feeling your thumbs.</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_leaderboard">Progress</string>
+    <string name="nav_stats">Stats</string>
+    <string name="nav_profile">Profile</string>
+    <string name="dash_reels_today">Reels today</string>
+    <string name="dash_reels_remaining">reels left today</string>
+    <string name="dash_daily_limit">%1$d / %2$d daily limit</string>
+    <string name="dash_tracker_sleeping">Tracker is sleeping. Tap to wake it up.</string>
+    <string name="dash_tracking_active">Tracking active</string>
+    <string name="dash_tracking_paused">Tracking paused</string>
+    <string name="dash_view_stats">View stats</string>
+
+    <!-- Brain states -->
+    <string name="brain_state_fresh">Fresh</string>
+    <string name="brain_state_strain">Strain</string>
+    <string name="brain_state_drained">Drained</string>
+    <string name="brain_state_tired">Tired</string>
+    <string name="brain_state_rotten">Rotten</string>
+
+    <!-- Legacy aliases -->
+    <string name="dash_state_warming">Fingers warming</string>
+    <string name="dash_state_almost">Almost numb</string>
+    <string name="dash_state_cooked">You\'re cooked</string>
+    <string name="home_reels_today">Reels today</string>
+    <string name="home_reels_consumed">reels consumed today</string>
+    <string name="home_reels_before_strike">reels before strike</string>
+    <string name="home_day_streak">Day streak</string>
+    <string name="home_strikes">Strikes</string>
+    <string name="dash_reels_scrolled_today">reels scrolled today</string>
+
+    <!-- Blocker overlay -->
+    <string name="blocker_reels_locked">Reels locked</string>
+    <string name="blocker_take_nap">Take the nap.</string>
+    <string name="blocker_subtitle">Your brain needs a rest. Reels unlock when the timer ends.</string>
+    <string name="blocker_unlock_in">Reels unlock in</string>
+    <string name="blocker_exit_reels">Exit reels</string>
+    <string name="blocker_earn_xp">Earn XP instead</string>
+    <string name="blocker_take_nap_long">Take a 15 min nap</string>
+    <string name="blocker_quick_peek">Quick peek, 2 min</string>
+    <string name="blocker_close_app">Close app</string>
+    <string name="blocker_unlocks_in">Reels unlock in %1$s</string>
+    <string name="blocker_reels_left">%1$d reels left</string>
+    <string name="blocker_youre_done">You\'re done for today</string>
+    <string name="blocker_brain_needs_rest">Your brain needs a rest</string>
+    <string name="blocker_locked_out">Locked out</string>
+    <string name="blocker_daily_cap_reached">Daily cap reached</string>
+
+    <!-- Legal / Privacy Policy / Terms -->
+    <string name="legal_privacy_title">Privacy Policy</string>
+    <string name="legal_privacy_updated">Last updated: %1$s</string>
+    <string name="legal_privacy_intro">ScrollNumb (\"we\", \"us\", or \"our\") respects your privacy. This policy explains what data we collect, how we use it, and what we never do.</string>
+    <string name="legal_privacy_h1">What we collect</string>
+    <string name="legal_privacy_b1">Counts, time spent, XP, streaks, and preferences are stored on this device.</string>
+    <string name="legal_privacy_h2">What we never collect</string>
+    <string name="legal_privacy_b2">The accessibility service processes screen events on your device to recognise reels, count scrolling, and display reminders.</string>
+    <string name="legal_privacy_h3">Permissions</string>
+    <string name="legal_privacy_b3">• Accessibility service: counts scrolls on Instagram, YouTube, Facebook, Snapchat, LinkedIn, and TikTok, and shows the shield when you hit your daily limit.\n• Notifications: sends reminders.\n• Photo picker: optional, only used when you choose a profile picture.</string>
+    <string name="legal_privacy_h4">Local profile</string>
+    <string name="legal_privacy_b4">Your profile is stored on this device. Clearing app storage or uninstalling removes local progress. Earlier online versions may have stored account data separately.</string>
+    <string name="legal_privacy_h5">Children</string>
+    <string name="legal_privacy_b5">ScrollNumb is not intended for users under 13. We do not knowingly collect any data from children.</string>
+    <string name="legal_privacy_h6">Changes</string>
+    <string name="legal_privacy_b6">If we ever change this policy, we will update the date at the top and notify you inside the app before it takes effect.</string>
+    <string name="legal_privacy_h7">Contact</string>
+    <string name="legal_privacy_b7">For support, open the project issue tracker from Settings.</string>
+
+    <string name="legal_terms_title">Terms of Service</string>
+    <string name="legal_terms_updated">Last updated: %1$s</string>
+    <string name="legal_terms_intro">By using ScrollNumb, you agree to the following terms. Please read them carefully.</string>
+    <string name="legal_terms_h1">License</string>
+    <string name="legal_terms_b1">ScrollNumb source code is available under the MIT License. Third-party assets remain subject to their respective licenses.</string>
+    <string name="legal_terms_h2">Acceptable use</string>
+    <string name="legal_terms_b2">You can study, modify, and share the source under its license. Use the app in accordance with the terms of the platforms you access.</string>
+    <string name="legal_terms_h3">No medical advice</string>
+    <string name="legal_terms_b3">ScrollNumb is a wellness tool, not a medical device. Nothing in the app constitutes medical, psychological, or professional advice. If you feel your screen habits are affecting your health, please consult a qualified professional.</string>
+    <string name="legal_terms_h4">Limitation of liability</string>
+    <string name="legal_terms_b4">The app is provided \"as is\". To the maximum extent permitted by law, we disclaim all warranties and shall not be liable for any indirect or consequential damages arising from your use of the app.</string>
+    <string name="legal_terms_h5">Changes to terms</string>
+    <string name="legal_terms_b5">We may update these terms from time to time. Continued use of the app after changes constitutes acceptance of the new terms.</string>
+    <string name="legal_terms_h6">Contact</string>
+    <string name="legal_terms_b6">For questions about these terms, use the project issue tracker.</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_daily_limit">Daily limit</string>
+    <string name="settings_accessibility">Accessibility service</string>
+    <string name="settings_accessibility_sub">Required for tracking</string>
+    <string name="settings_overlay">Display over other apps</string>
+    <string name="settings_overlay_sub">Not requested by ScrollNumb</string>
+    <string name="settings_usage">Usage access</string>
+    <string name="settings_usage_sub">Not requested by ScrollNumb</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_notifications_sub">Keeps the shield running</string>
+    <string name="settings_battery">Battery optimisation</string>
+    <string name="settings_battery_sub">Not requested by ScrollNumb</string>
+    <string name="settings_perm_granted">Granted</string>
+    <string name="settings_perm_denied">Tap to grant</string>
+    <string name="settings_perm_section">App permissions</string>
+    <string name="settings_language">Language</string>
+    <string name="language_sheet_title">Choose your language</string>
+    <string name="language_sheet_sub">Pick the language you want ScrollNumb in.</string>
+    <string name="settings_widgets">Widgets</string>
+    <string name="settings_widgets_sub">Pin to home screen</string>
+    <string name="settings_contact">Send feedback</string>
+    <string name="settings_contact_sub">Got issues or ideas?</string>
+    <string name="settings_login_create">Login or create account</string>
+    <string name="settings_login">Login</string>
+    <string name="settings_login_coming">Login coming soon</string>
+    <string name="settings_app_theme">App theme</string>
+    <string name="settings_english">English</string>
+    <string name="settings_rate_us">Rate us</string>
+    <string name="settings_check_updates">Check for updates</string>
+    <string name="settings_check_updates_sub">Updates install automatically — tap to check now</string>
+    <string name="settings_legal">Legal</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_terms">Terms of Service</string>
+    <string name="settings_legal_sub">Privacy, terms, licenses</string>
+    <string name="settings_version">ScrollNumb %1$s</string>
+
+    <!-- Language -->
+    <string name="language_title">Language</string>
+    <string name="language_applying">Applying…</string>
+    <string name="language_select_prompt">Tap a language to switch</string>
+
+    <!-- Analytics / Stats -->
+    <string name="stats_title">Stats</string>
+    <string name="stats_reels_today">Reels Today</string>
+    <string name="stats_daily_avg">Daily avg.</string>
+    <string name="stats_total_reels">Total Reels</string>
+    <string name="stats_total_reels_week">Total reels this week</string>
+    <string name="stats_reels_scrolled">reels scrolled</string>
+    <string name="stats_weekly_breakdown">Weekly breakdown</string>
+    <string name="stats_top_apps">Top apps</string>
+    <string name="stats_of_cap">of %1$d daily cap</string>
+    <string name="stats_today_label">Today</string>
+    <string name="stats_week_label">This week</string>
+    <string name="stats_no_data">No data yet</string>
+
+    <!-- Onboarding -->
+    <string name="gender_selection_title">Pick your avatar to stop scrolling</string>
+    <string name="onboarding_continue">Continue</string>
+    <string name="onboarding_get_started">Get started</string>
+    <string name="onboarding_grant_perms">Grant permissions above</string>
+    <string name="onboarding_almost_there">Permissions</string>
+    <string name="onboarding_permissions_desc">Your data is safe. We only track Reels, Shorts, and vertical content to make the app work and give you the best experience.</string>
+    <string name="onboarding_add_widget">Add widget</string>
+    <string name="onboarding_not_now">Not now</string>
+
+    <!-- Onboarding slides -->
+    <string name="onboarding_step1_title">Your brain starts\nfresh everyday</string>
+    <string name="onboarding_step1_sub">Every morning is a clean slate. No reels, no fog, just a clear head.</string>
+    <string name="onboarding_step2_title">Then you start\nscrolling.</string>
+    <string name="onboarding_step2_sub">Short-form feeds are engineered to keep you hooked. One reel turns into a hundred.</string>
+    <string name="onboarding_step3_title">Every reel drains\nyour brain more.</string>
+    <string name="onboarding_step3_sub">Each scroll chips away at focus, attention, and the ability to be present.</string>
+    <string name="onboarding_step4_title">Your ability to\nfocus drops.</string>
+    <string name="onboarding_step4_sub">But the damage isn\'t permanent. Stop the bleed, and your brain resets.</string>
+    <string name="onboarding_week_title">Within a week, you\'ll\nscroll less.</string>
+    <string name="onboarding_week_sub">And your mind will feel clearer.</string>
+    <string name="onboarding_benefit_focus">Focus better</string>
+    <string name="onboarding_benefit_mental">Improved mental health</string>
+    <string name="onboarding_benefit_sleep">Sleep calmly</string>
+    <string name="onboarding_decide_title">You decide when to stop.\nNot the algorithm.</string>
+    <string name="onboarding_decide_sub">Set a daily limit. When you hit it, reels lock until cooldown ends.</string>
+    <string name="onboarding_limit_title">You can stop\ndoomscrolling with\nsmart limits.</string>
+    <string name="onboarding_limit_sub">Choose how many reels you allow yourself per day.</string>
+    <string name="onboarding_cooldown_title">When you reach your\nlimit, reels are locked\ntill cooldown ends.</string>
+    <string name="onboarding_cooldown_sub">Pick how long to lock yourself out.</string>
+    <string name="onboarding_widget_title">See your reel count\nfrom your home screen.</string>
+    <string name="onboarding_widget_sub">Pin the ScrollNumb widget that shows your count and brain state at a glance.</string>
+    <string name="widget_preview_state">FRESH</string>
+    <string name="widget_preview_live">LIVE COUNT</string>
+    <string name="widget_preview_count">12</string>
+    <string name="widget_preview_limit">of 50 reels</string>
+    <string name="onboarding_reels_per_day">%1$d reels</string>
+    <string name="onboarding_minutes">%1$d mins</string>
+
+    <!-- Permissions -->
+    <string name="perm_1_title">Accessibility service</string>
+    <string name="perm_1_sub">Counts only supported short-video feeds.</string>
+    <string name="perm_2_title">Display over other apps</string>
+    <string name="perm_2_sub">Lets the pill and the blocking shield appear over reels.</string>
+    <string name="perm_3_title">Usage access</string>
+    <string name="perm_3_sub">Lets the shield close the moment you leave a tracked app.</string>
+    <string name="perm_4_title">Notifications</string>
+    <string name="perm_4_sub">Keeps the shield service running</string>
+    <string name="perm_5_title">Battery optimisation</string>
+    <string name="perm_5_sub">Stops Android from putting the counter to sleep in the background.</string>
+    <string name="privacy_title">Private by design</string>
+    <string name="privacy_on_device">ON-DEVICE</string>
+    <string name="privacy_local">ScrollNumb notices reel changes, not private content. Counting happens on your phone.</string>
+    <string name="privacy_content">Videos, messages, passwords and typing stay invisible. Only your progress is securely backed up to your account.</string>
+
+    <!-- Accessibility Service description -->
+    <string name="accessibility_service_description">ScrollNumb needs accessibility access to count reels and shorts on Instagram, YouTube, Facebook, Snapchat, LinkedIn, and TikTok. No content is read, only scrolls are detected. All data stays on your device.</string>
+
+    <!-- Leaderboard / Battle -->
+    <string name="leaderboard_title">Leaderboard</string>
+    <string name="leaderboard_subtitle">Less is more. Climb by scrolling less.</string>
+    <string name="leaderboard_empty_title">Challenge a friend to a scroll battle</string>
+    <string name="leaderboard_empty_sub">Less reels scrolled, more bragging rights. Invite a friend to keep each other honest.</string>
+    <string name="leaderboard_invite_friend">Invite a friend</string>
+    <string name="leaderboard_your_rank">Your rank</string>
+    <string name="leaderboard_xp">%1$d XP</string>
+    <string name="leaderboard_players_this_week">Players this week</string>
+    <string name="leaderboard_you_label">You</string>
+    <string name="leaderboard_rank_1">Scroll Sage</string>
+    <string name="leaderboard_rank_2">Mindful Master</string>
+    <string name="leaderboard_rank_3">Focus Knight</string>
+    <string name="leaderboard_rank_4">Calm Crusader</string>
+    <string name="leaderboard_rank_5">Brain Builder</string>
+    <string name="leaderboard_rank_6">Quiet Quitter</string>
+    <string name="leaderboard_rank_7">Doom Dodger</string>
+    <string name="leaderboard_rank_8">Scroll Slapper</string>
+    <string name="leaderboard_rank_9">Reel Refuser</string>
+    <string name="leaderboard_rank_10">Phone Free</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Profile</string>
+    <string name="profile_you">You</string>
+    <string name="profile_edit">Edit profile</string>
+    <string name="profile_sign_out">Sign out</string>
+    <string name="profile_login">Login</string>
+    <string name="profile_logged_in_as">Logged in as %1$s</string>
+    <string name="profile_joined_on">Joined %1$s</string>
+    <string name="profile_total_reels">Total reels</string>
+    <string name="profile_top_rank">Best rank</string>
+    <string name="profile_bio_label">Bio</string>
+    <string name="profile_email_label">Email</string>
+    <string name="profile_logged_in_msg">You\'re signed in. Edit your profile or sign out below.</string>
+    <string name="profile_logged_out_msg">Sign in to sync your stats and join the leaderboard.</string>
+    <string name="profile_guest_label">Guest</string>
+    <string name="profile_demo_hint">Try demo / 1234</string>
+    <string name="profile_xp_label">Total XP</string>
+    <string name="profile_xp_value">%1$d XP</string>
+    <string name="profile_xp_breakdown_streak">%1$d × 15 streak</string>
+    <string name="profile_xp_breakdown_math">%1$d × 2 math focus</string>
+    <string name="profile_xp_breakdown_breathe">%1$d × 1.5 breathe</string>
+    <string name="profile_xp_breakdown_scroll_less">%1$d × 3 scroll-less</string>
+    <string name="profile_change_photo">Change photo</string>
+    <string name="profile_pick_photo">Pick from gallery</string>
+    <string name="profile_reset_photo">Reset to avatar</string>
+
+    <!-- Login -->
+    <string name="login_title">Sign in</string>
+    <string name="login_subtitle">Enter your username and password to continue</string>
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_sign_in">Sign in</string>
+    <string name="login_fill_demo">Use demo account</string>
+    <string name="login_signing_in">Signing you in…</string>
+    <string name="login_demo_hint_title">Demo credentials</string>
+    <string name="login_demo_hint_body">Username: demo\nPassword: 1234\nOr: jasveer / singh\nOr: test / test</string>
+    <string name="login_close">Close</string>
+    <string name="login_show_password">Show password</string>
+    <string name="login_hide_password">Hide password</string>
+
+    <!-- Edit profile -->
+    <string name="edit_profile_title">Edit profile</string>
+    <string name="edit_profile_name">Display name</string>
+    <string name="edit_profile_username">Username</string>
+    <string name="edit_profile_bio">Bio</string>
+    <string name="edit_profile_avatar">Pick an emoji</string>
+    <string name="edit_profile_save">Save changes</string>
+    <string name="edit_profile_save_short">Save</string>
+    <string name="edit_profile_dob">Date of birth</string>
+    <string name="edit_profile_saved">Profile saved</string>
+    <string name="edit_profile_invalid_email">Enter a valid email address</string>
+
+    <!-- Offline / empty states -->
+    <string name="state_offline">You\'re offline — showing your saved data</string>
+    <string name="stats_empty_title">No activity yet</string>
+    <string name="stats_empty_msg">Once you open a tracked app like Instagram or YouTube, your scrolling stats will appear here.</string>
+
+    <!-- Accessibility content descriptions -->
+    <string name="a11y_brain_state">Your brain state for today\'s scrolling</string>
+
+    <!-- Privacy / analytics consent -->
+    <string name="settings_analytics_title">Analytics</string>
+    <string name="settings_analytics_sub">Share anonymous usage, crash &amp; performance data to help improve ScrollNumb. No personal content is ever collected. Turn off anytime.</string>
+
+    <!-- Auth -->
+    <string name="auth_welcome">Welcome to ScrollNumb</string>
+    <string name="auth_subtitle">Login or create an account\nto sync your stats across devices</string>
+    <string name="auth_continue_google">Continue with Google</string>
+    <string name="auth_continue_email">Continue with Email</string>
+    <string name="auth_email_hint">Email</string>
+    <string name="auth_password_hint">Password (min 6 characters)</string>
+    <string name="auth_sign_in">Sign In</string>
+    <string name="auth_create_account">Create Account</string>
+    <string name="auth_forgot_password">Forgot password?</string>
+    <string name="auth_reset_sent">Password reset link sent to your email</string>
+    <string name="auth_toggle_to_signup">New here? Create an account</string>
+    <string name="auth_toggle_to_signin">Already have an account? Sign in</string>
+    <string name="auth_back_to_options">Other sign-in options</string>
+    <string name="auth_verify_title">Verify your email</string>
+    <string name="auth_verify_sent">We sent a verification link to %1$s.\nOpen it in your inbox, then come back here.</string>
+    <string name="auth_verify_continue">I\'ve verified — Continue</string>
+    <string name="auth_verify_resend">Resend link</string>
+    <string name="auth_verify_not_yet">Not verified yet — open the link in your inbox first</string>
+    <string name="auth_verify_resent">Verification link sent again</string>
+    <string name="auth_skip">Skip and continue</string>
+    <string name="auth_privacy">By continuing, you have read and agree to our</string>
+    <string name="auth_privacy_policy">Privacy Policy</string>
+    <string name="auth_signing_in">Signing you in…</string>
+
+    <!-- Relaxation / Decompress -->
+    <string name="relax_title">Decompress</string>
+    <string name="relax_focus_xp">Focus XP: %1$d</string>
+    <string name="relax_math">Math focus</string>
+    <string name="relax_breathe">Breathe</string>
+    <string name="relax_dark_room">Dark room</string>
+    <string name="relax_dark_room_caption">30 seconds of pure black to rest your eyes.</string>
+    <string name="relax_dark_room_start">Start dark room</string>
+    <string name="relax_math_caption">Solve to earn 5 XP</string>
+    <string name="relax_breathe_caption">Breathe to earn 20 XP</string>
+    <string name="relax_submit">Submit</string>
+    <string name="relax_try_again">Try again!</string>
+    <string name="relax_correct">Correct!</string>
+    <string name="relax_breathe_done">Mind refreshed</string>
+    <string name="relax_correct_xp">+ %1$d XP</string>
+    <string name="relax_cap_reached">Daily cap reached</string>
+    <string name="relax_start_breathing">Start 1-min Breathing</string>
+    <string name="relax_stop_breathing">Stop</string>
+    <string name="relax_breathing_remaining">%1$ds remaining</string>
+    <string name="relax_breathe_in">Breathe in</string>
+    <string name="relax_breathe_out">Breathe out</string>
+    <string name="relax_hold">Hold</string>
+    <string name="relax_xp_reward">+ %1$d XP</string>
+    <string name="format_minutes_short">%1$dm</string>
+    <string name="format_hours_minutes">%1$dh %2$dm</string>
+
+    <!-- Block reels settings -->
+    <string name="block_title">Block reels</string>
+    <string name="block_status_blocking">Blocking</string>
+    <string name="block_status_locking">Locking</string>
+    <string name="block_status_paused">Paused</string>
+    <string name="block_status_sub">%1$d of %2$d reels scrolled</string>
+    <string name="block_allow_up_to">Allow up to</string>
+    <string name="block_allow_up_to_sub">Reels per day</string>
+    <string name="block_cooldown">Then block reels for</string>
+    <string name="block_cooldown_sub">Minutes</string>
+    <string name="block_master">Block reels</string>
+    <string name="block_master_sub">Lock reels after you hit your daily cap</string>
+    <string name="block_turn_off">Turn off blocking</string>
+    <string name="block_rest_of_day">Rest of the day</string>
+    <string name="block_till_tomorrow">Till tomorrow</string>
+    <string name="block_seven_days">7 days</string>
+</resources>

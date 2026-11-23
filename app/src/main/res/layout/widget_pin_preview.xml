@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="220dp"
+    android:layout_height="220dp"
+    android:background="@drawable/widget_preview_background"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.16"
+        android:text="@string/widget_preview_state"
+        android:textColor="#FFD642"
+        android:textSize="15sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:background="@drawable/widget_preview_progress_track"
+        android:fontFamily="sans-serif-medium"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:text="@string/widget_preview_live"
+        android:textColor="#99F5F0E8"
+        android:textSize="9sp" />
+
+    <FrameLayout
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_gravity="center_vertical|start"
+        android:background="@drawable/widget_preview_avatar_ring"
+        android:padding="4dp">
+
+        <ViewFlipper
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:autoStart="true"
+            android:flipInterval="1500"
+            android:inAnimation="@anim/widget_preview_avatar_in"
+            android:outAnimation="@anim/widget_preview_avatar_out">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/female_avatar_fresh" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="centerInside"
+                android:src="@drawable/male_avatar_fresh" />
+        </ViewFlipper>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="@string/widget_preview_count"
+            android:textColor="#F5F0E8"
+            android:textSize="42sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/widget_preview_limit"
+            android:textColor="#B3F5F0E8"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/widget_preview_progress_track">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/widget_preview_progress_fill" />
+    </FrameLayout>
+</FrameLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Narrowed event types (no global typeAllMask), no canPerformGestures.
+  packageNames = tracked apps + LAUNCHERS: the launcher's
+  typeWindowStateChanged on a home swipe is the only immediate "user left the
+  app" signal on gesture-nav (root stays pinned to the just-left app) — but a
+  fully OPEN allowlist made every app on the device generate accessibility
+  events for us, which janked unrelated apps. onServiceConnected also adds the
+  runtime-resolved default launcher to this list.
+  notificationTimeout 50ms (was 500): the OS coalesced/delayed scroll events by
+  up to half a second, which lagged both counting and pill show/hide.
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged|typeViewScrolled|typeViewClicked"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds|flagDefault|flagIncludeNotImportantViews|flagRetrieveInteractiveWindows"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accessibility_service_description"
+    android:notificationTimeout="30"
+    android:packageNames="com.instagram.android,com.facebook.katana,com.google.android.youtube,com.zhiliaoapp.musically,com.ss.android.ugc.aweme,com.ss.android.ugc.trill,com.snapchat.android,com.linkedin.android,com.nothing.launcher,com.google.android.apps.nexuslauncher,com.android.launcher3"
+    android:settingsActivity="com.scrollnumb.app.MainActivity" />

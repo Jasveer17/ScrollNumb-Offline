@@ -1,0 +1,52 @@
+# Lean detekt config for ScrollNumb (merged onto detekt defaults).
+# Goal: surface real bug-class findings, silence style noise that a
+# Compose-heavy Android UI generates by the hundred. Report-only — see the
+# `detekt { ignoreFailures = true }` block in app/build.gradle.kts.
+
+complexity:
+  # Compose screen functions are legitimately long/complex; these flood the
+  # report without indicating defects.
+  LongMethod:
+    active: false
+  LongParameterList:
+    active: false
+  CyclomaticComplexMethod:
+    active: false
+  NestedBlockDepth:
+    active: false
+  TooManyFunctions:
+    active: false
+
+naming:
+  # @Composable functions are intentionally PascalCase — detekt's default
+  # camelCase rule false-positives on every Compose UI function.
+  FunctionNaming:
+    active: false
+  MatchingDeclarationName:
+    active: false
+
+style:
+  # dp/sp/color/alpha literals everywhere in Compose — not bugs.
+  MagicNumber:
+    active: false
+  ReturnCount:
+    active: false
+  LoopWithTooManyJumpStatements:
+    active: false
+  WildcardImport:
+    active: false
+  MaxLineLength:
+    active: false
+  NewLineAtEndOfFile:
+    active: false
+
+exceptions:
+  # The accessibility/permission code intentionally guards node + system calls
+  # with broad catches; flagging every one is noise, not signal.
+  TooGenericExceptionCaught:
+    active: false
+  SwallowedException:
+    active: false
+
+# Left ACTIVE (the valuable signal): potential-bugs, coroutines, empty-blocks,
+# naming, and UnusedPrivateMember (dead code worth knowing about).

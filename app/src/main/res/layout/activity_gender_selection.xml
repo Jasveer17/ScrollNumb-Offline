@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A0907">
+
+    <!-- Editorial header: left-aligned, hard-edge -->
+    <TextView
+        android:id="@+id/tvEyebrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCROLLNUMB / ONBOARDING"
+        android:textColor="#4DF5F0E8"
+        android:textSize="11sp"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.22"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp" />
+
+    <View
+        android:id="@+id/headerRule"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#2A231B"
+        app:layout_constraintTop_toBottomOf="@id/tvEyebrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="14dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pick your\nfighter."
+        android:textColor="#F5F0E8"
+        android:textSize="44sp"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="-0.02"
+        android:lineSpacingMultiplier="0.98"
+        app:layout_constraintTop_toBottomOf="@id/headerRule"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Your companion for the fight against the feed."
+        android:textColor="#66F5F0E8"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="48dp" />
+
+    <!-- Male panel: asymmetric — pinned to start edge, breathing room on end -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMale"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#12100D"
+        app:strokeColor="#2A231B"
+        app:strokeWidth="1dp"
+        app:rippleColor="#1AFFD642"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+        app:layout_constraintBottom_toTopOf="@id/cardFemale"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginEnd="44dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <VideoView
+                android:id="@+id/videoMale"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <!-- Bottom scrim for label legibility -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/scrim_bottom_gender" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="01"
+                    android:textColor="#80FFD642"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif"
+                    android:letterSpacing="0.1" />
+
+                <TextView
+                    android:id="@+id/tvLabelMale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="MALE"
+                    android:textColor="#F5F0E8"
+                    android:textSize="22sp"
+                    android:fontFamily="sans-serif"
+                    android:letterSpacing="0.06" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="→"
+                    android:textColor="#FFD642"
+                    android:textSize="22sp" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Female panel: mirrored asymmetry — pinned to end edge -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardFemale"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#12100D"
+        app:strokeColor="#2A231B"
+        app:strokeWidth="1dp"
+        app:rippleColor="#1AFFD642"
+        app:layout_constraintTop_toBottomOf="@id/cardMale"
+        app:layout_constraintBottom_toTopOf="@id/tvHint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="1"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="44dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <VideoView
+                android:id="@+id/videoFemale"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/scrim_bottom_gender" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="02"
+                    android:textColor="#80FFD642"
+                    android:textSize="13sp"
+                    android:fontFamily="sans-serif"
+                    android:letterSpacing="0.1" />
+
+                <TextView
+                    android:id="@+id/tvLabelFemale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="14dp"
+                    android:text="FEMALE"
+                    android:textColor="#F5F0E8"
+                    android:textSize="22sp"
+                    android:fontFamily="sans-serif"
+                    android:letterSpacing="0.06" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="→"
+                    android:textColor="#FFD642"
+                    android:textSize="22sp" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TAP TO BEGIN"
+        android:textColor="#33F5F0E8"
+        android:textSize="11sp"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="12dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

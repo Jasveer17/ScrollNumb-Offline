@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Vibration for haptic feedback -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Notifications -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Boot receiver for WorkManager -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" tools:node="remove" />
+    <!-- Read connectivity state to show an offline banner / empty states -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Draw the shield/pill over other apps; also makes ScrollNumb appear in
+         the "Display over other apps" settings list so the row is grantable. -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- Direct, one-tap "ignore battery optimization" dialog that sets the exact
+         exemption isIgnoringBatteryOptimizations() reads. -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <!-- Usage Access: the service queries UsageStatsManager.queryEvents() to
+         confirm a tracked app is still foreground on gesture-nav devices (where
+         rootInActiveWindow stays pinned to the closed app). Without this
+         declaration the app never appears in the Usage Access settings list, so
+         the permission can't be granted and the cross-check silently no-ops. -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <application
+        android:name=".ScrollNumbApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ScrollNumb"
+        android:usesCleartextTraffic="false"
+        tools:targetApi="35">
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ScrollNumb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".GenderSelectionActivity"
+            android:exported="false"
+            android:configChanges="locale|layoutDirection|orientation|screenSize|smallestScreenSize|screenLayout|uiMode|fontScale|density"
+            android:theme="@style/Theme.ScrollNumb" />
+
+        <activity
+            android:name=".feature.welcome.WelcomeActivity"
+            android:exported="false"
+            android:configChanges="locale|layoutDirection|orientation|screenSize|smallestScreenSize|screenLayout|uiMode|fontScale|density"
+            android:theme="@style/Theme.ScrollNumb" />
+
+        <activity
+            android:name=".feature.quiz.QuizActivity"
+            android:exported="false"
+            android:configChanges="locale|layoutDirection|orientation|screenSize|smallestScreenSize|screenLayout|uiMode|fontScale|density"
+            android:theme="@style/Theme.ScrollNumb" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="locale|layoutDirection|orientation|screenSize|smallestScreenSize|screenLayout|uiMode|fontScale|density"
+            android:theme="@style/Theme.ScrollNumb">
+            <!-- Deep links: scrollnumb://<route> (e.g. scrollnumb://leaderboard)
+                 so notifications / shares can open a specific screen. -->
+            <intent-filter android:autoVerify="false">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="scrollnumb" />
+            </intent-filter>
+        </activity>
+
+        <!-- Accessibility Service for scroll detection -->
+        <service
+            android:name=".service.ScrollAccessibilityService"
+            android:exported="false"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <!-- Blocker Overlay Service -->
+        <service
+            android:name=".service.BlockerOverlayService"
+            android:exported="false" />
+
+        <!-- FCM streak reminders -->
+        
+
+        <!-- Widget Receiver -->
+        <receiver
+            android:name=".widget.ScrollNumbWidgetReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/scrollnumb_widget_info" />
+        </receiver>
+
+        <!-- Daily streak/XP finalization: midnight alarm + re-arm on reboot.
+             Fires in Doze without a battery-optimization exemption. -->
+        <receiver
+            android:name=".service.DailyResetReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
