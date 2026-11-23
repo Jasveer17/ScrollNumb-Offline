@@ -150,7 +150,6 @@ fun SettingsScreen(
                     .verticalScroll(rememberScrollState())
                     .padding(horizontal = 20.dp, vertical = 8.dp)
             ) {
-                com.scrollnumb.app.core.designsystem.components.WorldHeader("Appearance", choose = true)
                 SettingsRow(
                     iconRes = R.drawable.br_ic_accessibility,
                     title = stringResource(R.string.settings_accessibility),

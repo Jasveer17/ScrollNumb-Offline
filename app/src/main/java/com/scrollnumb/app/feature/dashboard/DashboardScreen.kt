@@ -39,10 +39,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.boundsInRoot
 import androidx.compose.ui.layout.onGloballyPositioned
-import com.scrollnumb.app.core.designsystem.components.avatarPainter as painterResource
-import com.scrollnumb.app.core.designsystem.theme.LocalFestival
-import com.scrollnumb.app.core.designsystem.theme.Festival
-import com.scrollnumb.app.core.designsystem.theme.displayName
+import androidx.compose.ui.res.painterResource
 import com.scrollnumb.app.core.util.AvatarHelper
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -209,7 +206,6 @@ fun DashboardScreen(
                 var activeGrass by remember { mutableStateOf<String?>(null) }
                 var showRemainingCount by remember { mutableStateOf(false) }
 
-                com.scrollnumb.app.core.designsystem.components.WorldHeader("Home", "$reelsAvoided reels left today", ratio = ratio)
                 // ── HERO: scroll count (left) + glowing brain state (right) ──
                 // Carded like every other section (refined-mockup alignment):
                 // InkRaised surface reads as "paper card" in light and "raised
@@ -448,14 +444,6 @@ fun DashboardScreen(
                 Spacer(Modifier.height(12.dp))
 
                 // ── Daily tip with brain illustration ──
-                val festival = LocalFestival.current
-                val maleAvatar = AvatarHelper.getGender(LocalContext.current).equals("Male", ignoreCase = true)
-                val tipArt = when {
-                    festival == Festival.DIWALI && maleAvatar -> R.drawable.seasonal_festival_male
-                    festival == Festival.DIWALI -> R.drawable.seasonal_festival_female
-                    maleAvatar -> R.drawable.seasonal_quest_male
-                    else -> R.drawable.seasonal_quest_female
-                }
                 val dailyTip = remember { com.scrollnumb.app.core.util.DailyTips.today() }
                 Row(
                     modifier = Modifier
@@ -467,7 +455,7 @@ fun DashboardScreen(
                 ) {
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
-                            text = festival?.displayName ?: "💡 TIP OF THE DAY",
+                            text = "💡 TIP OF THE DAY",
                             style = ScrollNumbType.Microcopy,
                             fontWeight = FontWeight.Bold,
                             color = ScrollNumbColors.Saffron,
@@ -483,7 +471,7 @@ fun DashboardScreen(
                     }
                     Spacer(Modifier.width(12.dp))
                     Image(
-                        painter = painterResource(id = tipArt),
+                        painter = painterResource(id = R.drawable.br_brain_state_0),
                         contentDescription = stringResource(R.string.a11y_brain_state),
                         modifier = Modifier.size(112.dp)
                     )

@@ -101,8 +101,6 @@ fun AnalyticsScreen(
                 val cap = uiState.dailyLimit
 
                 // ── Animated period chart ────────────────────────────
-                Text("Find your rhythm.", style = MaterialTheme.typography.headlineMedium, color = ScrollNumbColors.Cream, modifier = Modifier.fillMaxWidth())
-                Spacer(Modifier.height(12.dp))
                 PeriodTabs(
                     selected = uiState.period,
                     onSelect = viewModel::selectPeriod,
@@ -135,10 +133,6 @@ fun AnalyticsScreen(
                     AnimatedBarChart(bars = uiState.chartBars)
                 }
 
-                Row(Modifier.fillMaxWidth().padding(top = 12.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    BigStatCard(title = "DAILY AVERAGE", value = (uiState.periodTotal / uiState.periodDailyCounts.size.coerceAtLeast(1)).toString(), caption = "scrolls per recorded day", modifier = Modifier.weight(1f), compact = true)
-                    BigStatCard(title = "WITHIN LIMIT", value = "${uiState.periodDailyCounts.count { it <= cap }} / ${uiState.periodDailyCounts.size}", caption = "recorded days", modifier = Modifier.weight(1f), compact = true)
-                }
                 if (uiState.appBreakdown.isNotEmpty()) {
                     Spacer(modifier = Modifier.height(16.dp))
                     androidx.compose.foundation.layout.Column(
@@ -173,6 +167,13 @@ fun AnalyticsScreen(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
+                    BigStatCard(
+                        title = stringResource(R.string.stats_daily_avg).uppercase(),
+                        value = dailyAvg.toString(),
+                        caption = stringResource(R.string.stats_reels_scrolled),
+                        modifier = Modifier.weight(1f),
+                        compact = true
+                    )
                     BigStatCard(
                         title = stringResource(R.string.stats_total_reels).uppercase(),
                         value = totalReels.toString(),

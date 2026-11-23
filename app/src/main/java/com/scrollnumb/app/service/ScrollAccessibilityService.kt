@@ -2693,7 +2693,7 @@ val reelSurfaceState = detectCurrentReelSurface(rootNode, currentPlatform)
                                             )
                                         }
                                         Image(
-                                            painter = com.scrollnumb.app.core.designsystem.components.avatarPainter(id = avatarResId),
+                                            painter = androidx.compose.ui.res.painterResource(id = avatarResId),
                                             contentDescription = "Avatar Icon",
                                             modifier = Modifier
                                                 .size(30.dp)

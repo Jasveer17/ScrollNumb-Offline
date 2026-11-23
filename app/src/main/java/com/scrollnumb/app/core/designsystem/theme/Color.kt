@@ -141,9 +141,9 @@ object ScrollNumbColors {
 
     /** True when the active palette has dark surfaces. */
     val isDarkPalette: Boolean
-        get() = active.value.ink == DarkPalette.ink || active.value.ink == DonghuaPalette.ink
+        get() = active.value == DarkPalette || active.value == DonghuaPalette
 
-    internal fun applyThemePalette(themeName: String, systemDark: Boolean, festival: Festival?) {
+    fun applyThemePalette(themeName: String, systemDark: Boolean) {
         val target = when (themeName) {
             "DARK" -> DarkPalette
             "LIGHT" -> LightPalette
@@ -151,13 +151,7 @@ object ScrollNumbColors {
             "DONGHUA" -> DonghuaPalette
             else -> if (systemDark) DarkPalette else LightPalette
         }
-        val seasonal = festival?.let {
-            target.copy(
-                saffron = if (target == DarkPalette || target == DonghuaPalette) it.dark else it.light,
-                highlight = it.dark
-            )
-        } ?: target
-        if (active.value != seasonal) active.value = seasonal
+        if (active.value != target) active.value = target
     }
 
     // ── Brand ────────────────────────────────────

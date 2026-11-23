@@ -149,14 +149,7 @@ fun ScrollNumbTheme(
 
     // Swap the global dynamic palette — this is what re-colors every screen
     // that reads ScrollNumbColors.* directly (which is most of the app).
-    val today = androidx.compose.runtime.produceState(java.time.LocalDate.now()) {
-        while (true) {
-            value = java.time.LocalDate.now()
-            kotlinx.coroutines.delay(60_000L)
-        }
-    }
-    val festival = festivalFor(today.value)
-    ScrollNumbColors.applyThemePalette(themeName, darkTheme, festival)
+    ScrollNumbColors.applyThemePalette(themeName, darkTheme)
 
     val view = LocalView.current
     if (!view.isInEditMode) {
@@ -178,12 +171,9 @@ fun ScrollNumbTheme(
     }
 
     MaterialTheme(
-        colorScheme = if (festival == null) colorScheme else colorScheme.copy(
-            primary = if (effectiveDark) festival.dark else festival.light,
-            onPrimary = if (effectiveDark) Color.Black else Color.White
-        ),
+        colorScheme = colorScheme,
         typography = ScrollNumbTypography,
         shapes = ScrollNumbShapes,
-        content = { androidx.compose.runtime.CompositionLocalProvider(LocalFestival provides festival, content = content) }
+        content = content
     )
 }

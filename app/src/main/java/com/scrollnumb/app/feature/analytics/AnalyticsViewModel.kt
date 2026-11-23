@@ -48,7 +48,6 @@ data class AnalyticsUiState(
     val period: StatsPeriod = StatsPeriod.DAY,
     val chartBars: List<ChartBar> = emptyList(),
     val periodTotal: Int = 0,
-    val periodDailyCounts: List<Int> = emptyList(),
     val periodMinutes: Int = 0,
     val appBreakdown: List<AppBreakdown> = emptyList(),
     val dailyLimit: Int = 50
@@ -175,7 +174,6 @@ class AnalyticsViewModel @Inject constructor(
             _uiState.value = _uiState.value.copy(
                 chartBars = bars,
                 periodTotal = total,
-                periodDailyCounts = stats.map { it.totalScrolls },
                 periodMinutes = minutes,
                 appBreakdown = breakdown
             )

@@ -21,7 +21,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import com.scrollnumb.app.core.designsystem.components.avatarPainter as painterResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -118,14 +118,14 @@ fun ProfileScreen(
                     // as you near it), warming toward red the further over you go.
                     Box(
                         modifier = Modifier
-                            .fillMaxWidth().height(168.dp)
+                            .size(104.dp)
                             .clip(CircleShape)
-                            .background(androidx.compose.ui.graphics.Brush.radialGradient(listOf(scrollRingColor(ratio).copy(alpha = .45f), ScrollNumbColors.InkRaised)))
+                            .background(scrollRingColor(ratio))
                             .padding(4.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        if (!hasCustom) com.scrollnumb.app.core.designsystem.components.AnimatedAvatar(avatarResId, Modifier.fillMaxHeight()) else Avatar(
-                            avatar = chosen,
+                        Avatar(
+                            avatar = if (hasCustom) chosen else avatarResId,
                             modifier = Modifier.size(96.dp)
                         )
                     }
